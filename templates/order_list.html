@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>FoodShala</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{ url_for('restaurant_home') }}">FoodShala</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ url_for('restaurant_home') }}">Home</a></li>
+      <li><a href="{{ url_for('showmenutohotel') }}">Menu</a></li>
+      <li><a href="{{ url_for('addmenu') }}">Add Menu</a></li>
+      <li class="active"><a href="{{ url_for('orders_list') }}">Orders</a></li>
+      <li><a href="{{ url_for('hotellogout') }}">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+<table class="table table-condensed">
+  <thead>
+      <tr>
+        <th>Restaurant Name</th>
+        <th>Customer Name</th>
+        <th>Product Name</th>
+
+      </tr>
+    </thead>
+    {% for row in data %}
+        <tr>
+        {% for d in row %}
+            <td>{{ d }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+</div>
+
+
+</body>
+</html>

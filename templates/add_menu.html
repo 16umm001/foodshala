@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>FoodShala: Add menu</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <style type="text/css">
+  .login-form {
+    width: 340px;
+      margin: 50px auto;
+  }
+    .login-form form {
+      margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .login-form h2 {
+        margin: 0 0 15px;
+    }
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+    .btn {        
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{ url_for('restaurant_home') }}">FoodShala</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ url_for('restaurant_home') }}">Home</a></li>
+      <li><a href="{{ url_for('showmenutohotel') }}">Menu</a></li>
+      <li class="active"><a href="{{ url_for('addmenu') }}">Add Menu</a></li>
+      <li><a href="{{ url_for('orders_list') }}">Orders</a></li>
+      <li><a href="{{ url_for('hotellogout') }}">LogOut</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="login-form">
+    <form action="/addmenu" method="post">
+        <h2 class="text-center">Add menu items</h2>       
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Item Name" name ="itemname" required="required">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Detail" name = "detail" required="required">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Price" name ="price" required="required">
+        </div>
+
+        <div class="form-group">
+          <label for="pref">Food Type</label>
+          <select class="form-control" id="pref" name = "foodtype">
+          <option>Veg</option>
+          <option>NonVeg</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Add</button>
+        </div>
+
+
+        <div class="clearfix">
+        </div>        
+    </form>
+</div>
+
+
+
+</body>
+</html>
