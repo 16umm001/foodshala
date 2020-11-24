@@ -26,7 +26,7 @@ def home():
   mycursor.execute(query)
   data = mycursor.fetchall()
   print("aaaaaaaaa")
-  print("bbbbbbb")
+  
   return render_template('home.html', data = data)
 
 @app.route('/userlogin', methods=['GET', 'POST'])
