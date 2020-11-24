@@ -25,6 +25,9 @@ def home():
   query = "SELECT * from menu"
   mycursor.execute(query)
   data = mycursor.fetchall()
+  print("aaaaaaaaa")
+  print("bbbbbb")
+  
   return render_template('home.html', data = data)
 
 @app.route('/userlogin', methods=['GET', 'POST'])
